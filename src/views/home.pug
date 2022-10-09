@@ -1,0 +1,14 @@
+extends base
+block content
+    form(action="/videos/search" method="get")
+        input(name="keyword" type="text" placeholder="Broadcast Yourself")
+        input(type="submit", value="Search!" )
+    ul
+        each video in videos
+            a(href=`/videos/${video._id}`)
+                h2=video.title
+                p=video.description
+            hr
+        else
+            h1 Sorry, We can't find any Video
+            

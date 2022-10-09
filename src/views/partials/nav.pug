@@ -1,0 +1,16 @@
+nav
+    ul
+        li
+            a(href="/") home
+        if !loggedIn
+            li
+                a(href="/login") login
+            li
+                a(href="/join") Join
+        if loggedIn
+            li
+                a(href=`/users/${loggedInUser._id}`) Profile
+            li
+                a(href="/videos/upload") Upload
+            li
+                a(href="/users/logout") Log Out
